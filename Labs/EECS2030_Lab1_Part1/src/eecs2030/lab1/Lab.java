@@ -2,6 +2,9 @@ package eecs2030.lab1;
 
 import java.util.List;
 
+import org.junit.Rule;
+import org.junit.rules.Timeout;
+
 /**
  * A random assortment of methods reviewing topics that should have been covered
  * in your previous programming courses.
@@ -10,6 +13,10 @@ import java.util.List;
 
 public class Lab {
 
+	
+	@Rule
+	public Timeout globalTimeout = Timeout.seconds(1);
+	
 	private Lab() {
 		// empty to prevent object creation
 	}

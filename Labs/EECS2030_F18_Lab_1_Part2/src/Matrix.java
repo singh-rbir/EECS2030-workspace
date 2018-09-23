@@ -10,6 +10,7 @@
 
 public class Matrix {
 	
+	// Main method for testing some stuff
 	public static void main(String[] args) {
 		Matrix m = new Matrix(3, 4);
 		System.out.println(m.getNumberOfRows());
@@ -186,6 +187,7 @@ public class Matrix {
 	 */
 	public void rotateClockwise() {
 		/* Your Task */
+		
 		// First make a new 2D array called "temp[][]" and copy the contents of imp[][] into the new array
 		int[][] temp = new int[getNumberOfRows()][getNumberOfColumns()];
 		for(int i = 0; i < getNumberOfRows(); i++) {
@@ -194,6 +196,12 @@ public class Matrix {
 			}
 		}
 		
+		for(int i = 0; i <= getNumberOfRows(); i++) {
+			//int[] tempRow = new int[getNumberOfColumns()];
+			for(int j = 0; j < getNumberOfColumns(); j++) {
+				imp[j][getNumberOfRows() - 1 - i] = temp[i][j];
+			}
+		}
 		
 	}
 	

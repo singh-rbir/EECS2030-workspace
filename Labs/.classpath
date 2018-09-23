@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="EECS2030_F18_Lab_1_Part2/src"/>
+	<classpathentry kind="src" path="EECS2030_Lab1_Part1/src"/>
+	<classpathentry kind="src" path="lab0_workspace/EECS2030/src"/>
+	<classpathentry kind="src" path="TutorialProject/src"/>
+	<classpathentry kind="lib" path="EECS2030_Lab1_Part1/lib/HiddenCounter.jar"/>
+	<classpathentry kind="output" path="EECS2030_F18_Lab_1_Part2/bin"/>
+</classpath>

@@ -196,7 +196,7 @@ public class Matrix {
 			}
 		}
 		
-		for(int i = 0; i <= getNumberOfRows(); i++) {
+		for(int i = 0; i <=  getNumberOfRows(); i++) {
 			//int[] tempRow = new int[getNumberOfColumns()];
 			for(int j = 0; j < getNumberOfColumns(); j++) {
 				imp[j][getNumberOfRows() - 1 - i] = temp[i][j];

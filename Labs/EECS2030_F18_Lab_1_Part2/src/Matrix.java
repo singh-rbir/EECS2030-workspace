@@ -10,12 +10,16 @@
 
 public class Matrix {
 	
+	/*
 	// Main method for testing some stuff
 	public static void main(String[] args) {
-		Matrix m = new Matrix(3, 4);
-		System.out.println(m.getNumberOfRows());
-		System.out.println(m.getNumberOfColumns());
+		//Matrix m = new Matrix(3, 4);
+		//System.out.println(m.getNumberOfRows());
+		//System.out.println(m.getNumberOfColumns());
+		int[][] m = new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}}; 
+		System.out.print(m[1][1]);
 	}
+	*/
 	
 	/*
 	 * You must use this attribute 'imp' to implement
@@ -188,7 +192,9 @@ public class Matrix {
 	public void rotateClockwise() {
 		/* Your Task */
 		
-		// First make a new 2D array called "temp[][]" and copy the contents of imp[][] into the new array
+		
+		// First make a new 2D array called "temp[][]" 
+		// and copy the contents of imp[][] into the temp array
 		int[][] temp = new int[getNumberOfRows()][getNumberOfColumns()];
 		for(int i = 0; i < getNumberOfRows(); i++) {
 			for(int j = 0; j < getNumberOfColumns(); j++) {
@@ -196,13 +202,24 @@ public class Matrix {
 			}
 		}
 		
-		for(int i = 0; i <=  getNumberOfRows(); i++) {
+		// then make a new array on which we perform the modifications upon
+		int[][] result = new int[getNumberOfColumns()][getNumberOfRows()];
+		for(int i = 0; i < getNumberOfRows(); i++) {
 			//int[] tempRow = new int[getNumberOfColumns()];
 			for(int j = 0; j < getNumberOfColumns(); j++) {
-				imp[j][getNumberOfRows() - 1 - i] = temp[i][j];
+				result[j][getNumberOfRows() - i - 1] = temp[i][j];
 			}
 		}
 		
+		// then re-initialize imp as a new array with the new size and values
+		imp = new int[getNumberOfColumns()][getNumberOfRows()];
+		for(int i = 0; i < getNumberOfRows(); i++) {
+			for(int j = 0; j < getNumberOfColumns(); j++) {
+				imp[i][j] = result[i][j];
+			}
+		}
+		
+	
 	}
 	
 	/**
@@ -214,6 +231,25 @@ public class Matrix {
 	 */
 	public void shiftLeft() {
 		/* Your Task */
+		
+		//copy all the columns except for the first one, into a temporary array
+		int[][] result = new int[getNumberOfRows()][getNumberOfColumns()];
+		for(int i = 0; i < getNumberOfRows(); i++) {
+			for(int j = 1; j < getNumberOfColumns(); j++) {
+				result[i][j - 1] = imp[i][j];
+			}
+		}
+		// copy the first column into the last column
+		for(int i = 0; i < getNumberOfRows(); i++) {
+			result[i][getNumberOfColumns() - 1] = imp[i][0];
+		}
+		
+		// make the imp and result arrays equal
+		for(int i = 0; i < getNumberOfRows(); i++) {
+			for(int j = 0; j < getNumberOfColumns(); j++) {
+				imp[i][j] = result[i][j];
+			}
+		}
 	}
 	
 	/**
@@ -225,5 +261,24 @@ public class Matrix {
 	 */
 	public void shiftUp() {
 		/* Your Task */
+		
+		// copy all the rows except for the first one, into a temporary array
+		int[][] result = new int[getNumberOfRows()][getNumberOfColumns()];
+		for (int i = 1; i < getNumberOfRows(); i++) {
+			for (int j = 0; j < getNumberOfColumns(); j++) {
+				result[i - 1][j] = imp[i][j];
+			}
+		}
+		// copy the first row into the last row
+		for (int i = 0; i < getNumberOfColumns(); i++) {
+			result[getNumberOfRows() - 1][i] = imp[0][i];
+		}
+
+		// make the imp and result arrays equal
+		for (int i = 0; i < getNumberOfRows(); i++) {
+			for (int j = 0; j < getNumberOfColumns(); j++) {
+				imp[i][j] = result[i][j];
+			}
+		}
 	}
 }

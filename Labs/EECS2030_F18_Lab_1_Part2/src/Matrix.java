@@ -10,7 +10,7 @@
 
 public class Matrix {
 	
-	
+	/*
 	// Main method for testing some stuff
 	public static void main(String[] args) {
 		//Matrix m = new Matrix(3, 4);
@@ -19,9 +19,8 @@ public class Matrix {
 		int[][] m = new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}}; 
 		System.out.print(m[1][1]);
 		
-		
 	}
-	
+	*/
 	
 	/*
 	 * You must use this attribute 'imp' to implement
